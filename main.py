@@ -1,5 +1,6 @@
 import sqlite3
 from registerMasterPassword import registrarSenhaMaster
+from login import loginSystem
 
 def databaseInit():
     conn = sqlite3.connect("passwords.db")
@@ -10,8 +11,9 @@ def databaseInit():
     )''')
 
     conn.execute('''CREATE TABLE IF NOT EXISTS master(
-        masterpassword INT
+        masterpassword TEXT
     )''')
 
 databaseInit()
 registrarSenhaMaster()
+loginSystem()
