@@ -1,5 +1,5 @@
 import sqlite3
-from registerMasterPassword import registrarSenhaMaster
+from registerMasterPassword import registerMasterPassword
 from login import loginSystem
 
 def databaseInit():
@@ -15,5 +15,5 @@ def databaseInit():
     )''')
 
 databaseInit()
-registrarSenhaMaster()
+registerMasterPassword()
 loginSystem()

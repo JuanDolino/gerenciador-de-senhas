@@ -1,7 +1,8 @@
 import sqlite3
+from clearDisplay import clear
 
-def registrarSenhaMaster():
-
+def registerMasterPassword():
+    clear()
     conn = sqlite3.connect('passwords.db')
     cur = conn.execute("SELECT * FROM master")
 

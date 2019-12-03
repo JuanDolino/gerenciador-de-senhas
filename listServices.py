@@ -1,7 +1,9 @@
 import sqlite3
 from time import sleep
+from clearDisplay import clear
 
 def listServices():
+    clear()
     conn = sqlite3.connect('passwords.db')
     cur = conn.execute("SELECT * FROM datauser")
 
@@ -18,4 +20,4 @@ def listServices():
         cur = conn.execute("SELECT * FROM datauser")
         for i in cur:
             print(i[2])
-        input("PRESSIONE QUALQUER TECLA: ")
+        input("Pressione qualquer tecla para continuar... ")

@@ -7,7 +7,7 @@ def insertService():
 
         user = input("USUÁRIO: ")
         password = input("SENHA: ")
-        service = input("SERVIÇO: ")
+        service = input("SERVIÇO: ").lower()
 
         conn.execute(f"INSERT INTO datauser VALUES('{user}', '{password}', '{service}')")
         conn.commit()

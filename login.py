@@ -2,6 +2,7 @@ import sqlite3
 from insertService import insertService
 from clearDisplay import clear
 from listServices import listServices
+from savePassword import recoverPassword
 
 def menu():
     clear()
@@ -12,6 +13,7 @@ def menu():
     print("\nI: INSERIR NOVA SENHA")
     print("L: LISTAR SERVIÇOS CADASTRADOS")
     print("R: RECUPERAR UMA SENHA")
+    print("S: SAIR")
 
 def loginSystem():
     conn = sqlite3.connect('passwords.db')
@@ -26,6 +28,9 @@ def loginSystem():
                 try:
                     option = str(input("Opção: "))
 
+                    if option in "Rr":
+                        recoverPassword()
+
                     if option in 'Ii':
                         clear()
                         insertService()
@@ -33,6 +38,9 @@ def loginSystem():
                     elif option in "Ll":
                         clear()
                         listServices()
+                    elif option in "Ss":
+                        print("\nDesconectando...")
+                        break
 
                 except:
                     print('ERRO! OPÇÃO INVÁLIDA\n')
